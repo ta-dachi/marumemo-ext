@@ -3,13 +3,11 @@
   "name": "modify-page",
   "version": "0.0.1",
   "permissions": [
-    "http://*/",
-    "https://*/",
     "activeTab",
     "contextMenus"
   ],
   "background": {
     "persistent": false,
-    "scripts": ["background.js"]
+    "scripts": ["vendor.js", "background.js", "page-eater.js"]
   }
 }
