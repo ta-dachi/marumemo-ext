@@ -5,8 +5,9 @@ const srcDir = './src/';
 
 module.exports = {
   entry: {
+    background: path.join(__dirname, srcDir + 'background.ts'),
     "page-eater": path.join(__dirname, srcDir + 'page-eater.ts'),
-    background: path.join(__dirname, srcDir + 'background.ts')
+    "save-page": path.join(__dirname, srcDir + 'save-page.ts')
   },
   output: {
     path: path.join(__dirname, './modify-page/'),
@@ -34,6 +35,9 @@ module.exports = {
     new CopyPlugin([{
       from: "manifest.json",
       to: './'
+    }, {
+      from: "./src/popup.html",
+      to: "./"
     }], {
       context: './'
     }),

@@ -8,6 +8,6 @@
   ],
   "background": {
     "persistent": false,
-    "scripts": ["vendor.js", "background.js", "page-eater.js"]
+    "scripts": ["vendor.js", "background.js", "browserActions.js", "contextMenus.js", "page-eater.js", "save-page.js"]
   }
 }
