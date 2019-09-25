@@ -5,7 +5,7 @@ const srcDir = './src/';
 
 module.exports = {
   entry: {
-    background: path.join(__dirname, srcDir + 'background.ts'),
+    background: path.join(__dirname, srcDir + '/background/background.ts'),
     "page-eater": path.join(__dirname, srcDir + 'page-eater.ts'),
     "save-page": path.join(__dirname, srcDir + 'save-page.ts')
   },

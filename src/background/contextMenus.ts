@@ -7,10 +7,17 @@ let contextMenuItem: any = {
 
 browser.contextMenus.create(contextMenuItem);
 
-browser.contextMenus.onClicked.addListener(function(info, tab) {
+browser.contextMenus.onClicked.addListener(async function(info, tab) {
   if (info.menuItemId == "eatpage") {
-    browser.tabs.executeScript({
-      file: "page-eater.js"
-    });
+    try {
+      const result = await browser.tabs.executeScript({
+        file: "page-eater.js"
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
   }
 });
+
+console.log("contextMenus loaded.");

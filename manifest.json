@@ -6,8 +6,12 @@
     "activeTab",
     "contextMenus"
   ],
+  "browser_action": {
+    "default_title": "marumemo ext",
+    "default_popup": "popup.html"
+  },
   "background": {
-    "persistent": false,
-    "scripts": ["vendor.js", "background.js", "browserActions.js", "contextMenus.js", "page-eater.js", "save-page.js"]
+    "persistent": true,
+    "scripts": ["vendor.js", "background.js", "page-eater.js", "save-page.js"]
   }
 }
