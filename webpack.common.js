@@ -2,12 +2,17 @@ const webpack = require("webpack");
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const srcDir = './src/';
+const contentScriptsDir = '/contentScripts/';
 
 module.exports = {
   entry: {
-    background: path.join(__dirname, srcDir + '/background/background.ts'),
-    "page-eater": path.join(__dirname, srcDir + 'page-eater.ts'),
-    "save-page": path.join(__dirname, srcDir + 'save-page.ts')
+    background: "./src/background/background.ts",
+    popup: "./src/popup.ts",
+    "content-script": "./src/contentScripts/content-script.ts",
+    "send-message": "./src/contentScripts/send-message.ts",
+    "page-eater": "./src/contentScripts/page-eater.ts",
+    "save-page": "./src/contentScripts/save-page.ts"
+    // browserActions: path.join(__dirname, srcDir + "browserActions/*")
   },
   output: {
     path: path.join(__dirname, './modify-page/'),

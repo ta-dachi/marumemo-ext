@@ -1,17 +1,37 @@
 import { browser } from "webextension-polyfill-ts";
 
-let contextMenuItem: any = {
-  id: "eatpage",
-  title: "eat-page"
-};
+// Onetime call on install to create context menu items.
+browser.runtime.onInstalled.addListener(function() {
+  console.log("ContextMenus browser.runtime.onInstalled event");
+  let contextMenuItem: any = {
+    id: "eatpage",
+    title: "eat-page"
+  };
 
-browser.contextMenus.create(contextMenuItem);
+  let notifyMenuItem: any = {
+    id: "notify",
+    title: "notify"
+  };
+
+  browser.contextMenus.create(contextMenuItem);
+  browser.contextMenus.create(notifyMenuItem);
+});
 
 browser.contextMenus.onClicked.addListener(async function(info, tab) {
   if (info.menuItemId == "eatpage") {
     try {
       const result = await browser.tabs.executeScript({
         file: "page-eater.js"
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  if (info.menuItemId == "notify") {
+    try {
+      const result = await browser.tabs.executeScript({
+        file: "content-script.js"
       });
       console.log(result);
     } catch (error) {
