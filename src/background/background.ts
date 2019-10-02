@@ -12,15 +12,15 @@ console.log("background loaded");
 //   }
 // });
 
-// browser.runtime.onMessage.addListener(notify);
+browser.runtime.onMessage.addListener(notify);
 
-// function notify(message) {
-//   browser.notifications.create({
-//     type: "basic",
-//     title: "You clicked a link!",
-//     message: message.notify
-//   });
-// }
+function notify(message) {
+  browser.notifications.create({
+    type: "basic",
+    title: "You clicked a link!",
+    message: message.notify
+  });
+}
 
 browser.runtime.onInstalled.addListener(function() {
   browser.runtime.onConnect.addListener(function(port) {

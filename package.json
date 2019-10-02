@@ -10,9 +10,7 @@
     "build": "webpack --config webpack.prod.js",
     "clean": "rimraf modify-page"
   },
-  "dependencies": {
-    "webextension-polyfill-ts": "^0.10.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/chrome": "0.0.88",
     "@types/node": "^12.7.5",
@@ -23,6 +21,8 @@
     "ts-loader": "^6.1.1",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3",
+    "webextension-polyfill": "^0.5.0",
+    "webextension-polyfill-ts": "^0.10.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
     "webpack-merge": "^4.2.2"
