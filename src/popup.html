@@ -1,19 +1,30 @@
 <html>
 
 <head>
+
   <style>
-    button {
-      height: 30px;
-      width: 30px;
-      outline: none;
+    .button {
+      outline: red 10;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 50px auto 50px;
     }
   </style>
 </head>
 
 <body>
-  <button id="changeColor" onclick="console.log('test')"></button>
+  <div class="container">
+    <div></div>
+    <button id="myButton" class="button">Click me</button>
+    <button id="notifyButton">Notify</button>
+    <button id="test">test</button>
+    <div></div>
+  </div>
+  <script src="popup.js"></script>
+  <script src="testpop.js"></script>
+  </script>
 </body>
-
-<script src="popup.js"></script>
 
 </html>

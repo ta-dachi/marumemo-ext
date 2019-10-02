@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     background: "./src/background/background.ts",
     popup: "./src/popup.ts",
+    testpop: "./src/testpop.ts",
     "content-script": "./src/contentScripts/content-script.ts",
     "send-message": "./src/contentScripts/send-message.ts",
     "page-eater": "./src/contentScripts/page-eater.ts",
