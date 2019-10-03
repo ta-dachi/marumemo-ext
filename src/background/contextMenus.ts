@@ -13,11 +13,27 @@ browser.runtime.onInstalled.addListener(function() {
     title: "notify"
   };
 
+  let messagePopup: any = {
+    id: "messagePopup",
+    title: "messagePopup"
+  };
+
   browser.contextMenus.create(contextMenuItem);
   browser.contextMenus.create(notifyMenuItem);
+  browser.contextMenus.create(messagePopup);
 });
 
 browser.contextMenus.onClicked.addListener(async function(info, tab) {
+  if (info.menuItemId == "messagePopup") {
+    try {
+      const result = await browser.tabs.executeScript({
+        file: "message-popup.js"
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   if (info.menuItemId == "eatpage") {
     try {
       const result = await browser.tabs.executeScript({
@@ -31,7 +47,7 @@ browser.contextMenus.onClicked.addListener(async function(info, tab) {
   if (info.menuItemId == "notify") {
     try {
       const result = await browser.tabs.executeScript({
-        file: "content-script.js"
+        file: "notify.js"
       });
       console.log(result);
     } catch (error) {

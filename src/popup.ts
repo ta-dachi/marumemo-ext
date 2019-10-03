@@ -1,8 +1,8 @@
 import { browser } from "webextension-polyfill-ts";
 
 console.log("popup.ts");
-console.log(browser.extension.getBackgroundPage());
-browser.tabs.executeScript({ file: "page-eater.js" });
+// console.log(browser.extension.getBackgroundPage());
+// browser.tabs.executeScript({ file: "page-eater.js" });
 document.getElementById("myButton").addEventListener("click", sendMessage);
 
 console.log(document.getElementById("myButton"));

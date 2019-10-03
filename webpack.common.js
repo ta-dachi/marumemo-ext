@@ -9,6 +9,7 @@ module.exports = {
     background: "./src/background/background.ts",
     popup: "./src/popup.ts",
     testpop: "./src/testpop.ts",
+    "notify": "./src/contentScripts/notify.ts",
     "content-script": "./src/contentScripts/content-script.ts",
     "send-message": "./src/contentScripts/send-message.ts",
     "page-eater": "./src/contentScripts/page-eater.ts",
@@ -39,12 +40,18 @@ module.exports = {
     // exclude locale files in moment
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new CopyPlugin([{
-      from: "manifest.json",
-      to: './'
-    }, {
-      from: "./src/popup.html",
-      to: "./"
-    }], {
+        from: "manifest.json",
+        to: './'
+      },
+      {
+        from: "./src/icons/link-48.png",
+        to: './icons'
+      },
+      {
+        from: "./src/popup.html",
+        to: "./"
+      }
+    ], {
       context: './'
     }),
   ]

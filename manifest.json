@@ -3,6 +3,7 @@
   "name": "modify-page",
   "version": "0.0.1",
   "permissions": [
+    "notifications",
     "activeTab",
     "contextMenus"
   ],
@@ -11,7 +12,10 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "persistent": true,
-    "scripts": ["vendor.js", "background.js", "content-script.js", "page-eater.js", "save-page.js", "send-message.js"]
-  }
+    "scripts": ["vendor.js", "background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["vendor.js", "notify.js"]
+  }]
 }
